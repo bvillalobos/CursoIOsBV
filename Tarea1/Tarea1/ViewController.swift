@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var textFieldNumOne: UITextField!
     @IBOutlet weak var textFieldNumTwo: UITextField!
     
@@ -27,9 +27,9 @@ class ViewController: UIViewController {
         btnRestar.backgroundColor = UIColor.lightGray
         btnMultiplicar.backgroundColor = UIColor.lightGray
         btnDividir.backgroundColor = UIColor.lightGray
-   
+        
     }
-
+    
     func CerrarKeyBoardTarea() {
         view.endEditing(true)
     }
@@ -45,11 +45,11 @@ class ViewController: UIViewController {
         }
         
     }
-   
-   @IBAction func btnRestar(_ sender: Any) {
+    
+    @IBAction func btnRestar(_ sender: Any) {
         
         if let primerValor = Int(textFieldNumOne.text!), let segundoValor = Int(textFieldNumTwo.text!){
-          let alertController = UIAlertController(title: "RESTA", message: "El resultado es: \(primerValor - segundoValor)", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "RESTA", message: "El resultado es: \(primerValor - segundoValor)", preferredStyle: .alert)
             let action = UIAlertAction(title: "OK", style: .default, handler: nil)
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             alertController.addAction(action)
             present(alertController, animated: true, completion: nil)
         }
-
+        
     }
     
     @IBAction func btnDividir(_ sender: Any) {
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
                 let action = UIAlertAction(title: "OK", style: .default, handler: nil)
                 alertController.addAction(action)
                 present(alertController, animated: true, completion: nil)
-
+                
                 return
             }
             
@@ -90,7 +90,7 @@ class ViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         }
-       
+        
     }
     
     
