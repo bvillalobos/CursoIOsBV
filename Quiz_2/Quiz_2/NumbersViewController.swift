@@ -9,15 +9,16 @@
 import UIKit
 
 class NumbersViewController: UIViewController {
-
+    @IBOutlet weak var tableView: UITableView!
+    
     var numberArray = [Int] ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         loadDataSource()
-
+        loadDataSource()
+        tableView.registerCustomCell(identifier: TableViewCell.getCellIndentifier())
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,16 +29,14 @@ class NumbersViewController: UIViewController {
         for index in 0...100{
             numberArray.append(index)
         }
-      
+        
     }
     
-
+    
 }
 
 extension NumbersViewController: UITableViewDelegate, UITableViewDataSource
 {
-
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberArray.count
     }
@@ -48,19 +47,21 @@ extension NumbersViewController: UITableViewDelegate, UITableViewDataSource
         
         
         let value = numberArray[indexPath.row]
-        cell.textLabel?.text = "\(value)"
+        cell.numLabel.text = "\(value)"
+        if (value % 2) == 0 {
+            cell.backgroundColor = UIColor.blue
+        } else {
+            cell.backgroundColor = UIColor.red
+        }
         
         return cell
-        
     }
-    
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 200
         
     }
-
-
+    
+    
 }
