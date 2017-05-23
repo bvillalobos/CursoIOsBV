@@ -1,5 +1,5 @@
 //
-//  CategoryTableViewCell.swift
+//  NewsTableViewCell.swift
 //  News
 //
 //  Created by administrator on 5/18/17.
@@ -8,10 +8,11 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class NewsTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var categoryImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLable: UILabel!
+    @IBOutlet weak var descriptionLable: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +23,6 @@ class CategoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func setupCell(category: Category){
-        
-    categoryImageView.image = category.image
-        nameLabel.text = category.name
-    
     }
     
 }

@@ -13,7 +13,7 @@
         <!--Category View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CategoryViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="CategoryViewController" customModule="News" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -64,7 +64,28 @@
                     <view key="view" contentMode="scaleToFill" id="SNh-V7-7eP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NfX-pr-FtY">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-ay-O1M">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="7XR-5m-gwU" id="tnV-3W-VLZ"/>
+                                            <outlet property="delegate" destination="7XR-5m-gwU" id="o2x-gc-ReS"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NfX-pr-FtY" secondAttribute="trailing" id="HFh-Uc-9DZ"/>
+                            <constraint firstItem="NfX-pr-FtY" firstAttribute="leading" secondItem="SNh-V7-7eP" secondAttribute="leading" id="MqE-52-MRQ"/>
+                            <constraint firstItem="uoE-ww-CvI" firstAttribute="top" secondItem="NfX-pr-FtY" secondAttribute="bottom" id="dFW-ht-wn4"/>
+                            <constraint firstItem="NfX-pr-FtY" firstAttribute="top" secondItem="IUl-IK-OJS" secondAttribute="bottom" id="mQO-JB-dAb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJa-UK-jO9" userLabel="First Responder" sceneMemberID="firstResponder"/>

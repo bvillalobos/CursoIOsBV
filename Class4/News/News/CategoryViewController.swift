@@ -18,6 +18,9 @@ class CategoryViewController: UIViewController {
         super.viewDidLoad()
         inicializeCategories()
         TableView.registerCustomCell(identifier: CategoryTableViewCell.getTableViewCellIdentifier())
+        
+        
+        self.title = "Categories"
 
         // Do any additional setup after loading the view.
     }
@@ -45,13 +48,22 @@ extension CategoryViewController:UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCell(withIdentifier: "")
+        let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.getTableViewCellIdentifier()) as! CategoryTableViewCell
         
-        return cell!
+        cell.setupCell(category: categories[indexPath.row])
+        
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let  newViewController = storyboard?.instantiateViewController(withIdentifier: NewsViewController.getViewControllerIndentifier()) as! NewsViewController
+        newsViewController.news = categories[indexPath.row].newsArray
+        navigationController?.pushViewController(newsViewController, animated: true)
     }
 
 

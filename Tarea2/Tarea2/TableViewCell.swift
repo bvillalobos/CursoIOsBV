@@ -1,17 +1,16 @@
 //
-//  CategoryTableViewCell.swift
-//  News
+//  TableViewCell.swift
+//  Tarea2
 //
-//  Created by administrator on 5/18/17.
+//  Created by administrator on 5/22/17.
 //  Copyright © 2017 administrator. All rights reserved.
 //
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var categoryImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var numLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,13 +21,6 @@ class CategoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    func setupCell(category: Category){
-        
-    categoryImageView.image = category.image
-        nameLabel.text = category.name
-    
     }
     
 }
