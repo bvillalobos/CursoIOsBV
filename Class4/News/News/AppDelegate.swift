@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  News
 //
-//  Created by administrator on 5/18/17.
-//  Copyright © 2017 administrator. All rights reserved.
+//  Created by Felipe Soto Campos on 5/18/17.
+//  Copyright © 2017 PIPO. All rights reserved.
 //
 
 import UIKit
