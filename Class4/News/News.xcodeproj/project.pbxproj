@@ -19,6 +19,7 @@
 		16622DCB1ECE7B63007C6A0C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16622DC91ECE7B63007C6A0C /* CategoryTableViewCell.xib */; };
 		16622DCE1ECE869B007C6A0C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16622DCC1ECE869B007C6A0C /* NewsTableViewCell.swift */; };
 		16622DCF1ECE869B007C6A0C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16622DCD1ECE869B007C6A0C /* NewsTableViewCell.xib */; };
+		C321FC711ED501B500AB5AEF /* NewsDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C321FC701ED501B500AB5AEF /* NewsDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		16622DC91ECE7B63007C6A0C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		16622DCC1ECE869B007C6A0C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewCell.swift; path = CustomCell/NewsTableViewCell.swift; sourceTree = "<group>"; };
 		16622DCD1ECE869B007C6A0C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsTableViewCell.xib; path = CustomCell/NewsTableViewCell.xib; sourceTree = "<group>"; };
+		C321FC701ED501B500AB5AEF /* NewsDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				16622DB91ECE723C007C6A0C /* NewsViewController.swift */,
+				C321FC701ED501B500AB5AEF /* NewsDetailTableViewController.swift */,
 			);
 			name = News;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				16622DC01ECE743E007C6A0C /* News.swift in Sources */,
 				16622DCA1ECE7B63007C6A0C /* CategoryTableViewCell.swift in Sources */,
 				16622DBD1ECE737C007C6A0C /* Helper.swift in Sources */,
+				C321FC711ED501B500AB5AEF /* NewsDetailTableViewController.swift in Sources */,
 				16622DC21ECE7449007C6A0C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +365,7 @@
 				16622DB21ECE6564007C6A0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
