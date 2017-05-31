@@ -22,12 +22,9 @@ class CategoryViewController: UIViewController {
     }
 
     
-    func initializeCategories(){
-        let economyCategory = Category(name: "Economía", image: "economy", type: .economy)
-        let sportsCategory = Category(name: "Sports", image: "sports", type: .sports)
-        let technologyCategory = Category(name: "Tecnología", image: "technology", type: .technology)
-        let incidentCategory = Category(name: "Sucesos", image: "incident", type: .incedents)
-        categories = [economyCategory,sportsCategory,technologyCategory,incidentCategory]
+    func initializeCategories()
+    {
+        categories = CoreDataManager.getAllCategories()
     }
 }
 
@@ -46,9 +43,7 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newsViewController = storyboard?.instantiateViewController(withIdentifier: NewsViewController.getViewControllerIdentifier()) as! NewsViewController
-        newsViewController.news = categories[indexPath.row].newsArray
-        newsViewController.categoryType = categories[indexPath.row].type
-        newsViewController.delegate = self
+        newsViewController.category = categories[indexPath.row]
         navigationController?.pushViewController(newsViewController, animated: true)
     }
     
@@ -56,16 +51,4 @@ extension CategoryViewController: UITableViewDataSource, UITableViewDelegate{
         return 150
     }
 
-}
-
-
-extension CategoryViewController:NewsViewControllerDelegate{
-    func addNews(news: [News], categoryType: CategoryType) {
-        let index = categories.index {$0.type == categoryType}
-        if let indexUnwraped = index{
-            let categoryToUpdate = categories[indexUnwraped]
-            categoryToUpdate.newsArray = news
-            categories[indexUnwraped] = categoryToUpdate
-        }
-    }
 }
